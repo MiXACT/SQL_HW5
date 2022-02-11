@@ -101,15 +101,6 @@ if __name__ == '__main__':
     print('2) Исполнитель(ли), написавший(ие) самый короткий по продолжительности трек: ', result)
 
     # 9 - названия альбомов, содержащих наименьшее количество треков
-    # result = connection.execute("""
-    #         SELECT album_title FROM albums
-    #         WHERE id IN (SELECT album_id FROM tracks
-    #                     GROUP BY album_id
-    #                     ORDER BY MIN(album_id));
-    #     """).fetchall()
-    # print('Названия альбомов, содержащих наименьшее количество треков: ', result)
-
-    # 9 - названия альбомов, содержащих наименьшее количество треков
     result = connection.execute("""
             SELECT album_title FROM albums
             WHERE id IN (SELECT album_id FROM tracks
